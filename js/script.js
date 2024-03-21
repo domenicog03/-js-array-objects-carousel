@@ -30,10 +30,14 @@ const imagesContainer = document.querySelector('.images-container');
 const thumbnailsContainer = document.querySelector('.thumbnails-container');
 images.forEach((images) =>{
      const thisPath = images.image;
+     const thisTitle= images.title;
+     const thisText= images.text;
 
     const newImage = `
     <div class="image">
         <img src="${thisPath}">
+        <h2>${thisTitle}</h2>
+        <h3>${thisText}</h3>
     </div>
     `;
 
