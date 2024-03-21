@@ -53,3 +53,18 @@ img {
     height: 100%;
     object-fit: cover;
 }
+
+h2{
+    position: absolute;
+    right: 26%;
+    bottom: 12%;
+    color: white;
+    text-align: right;
+}
+h3{
+    position: absolute;
+    right: 26%;
+    bottom: 0;
+    color: white;
+    text-align: right;
+}
