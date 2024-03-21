@@ -21,3 +21,76 @@ const images = [
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
 ];
+
+
+let activeItem = 0;
+
+
+const imagesContainer = document.querySelector('.images-container');
+const thumbnailsContainer = document.querySelector('.thumbnails-container');
+images.forEach((images) =>{
+     const thisPath = images.image;
+
+    const newImage = `
+    <div class="image">
+        <img src="${thisPath}">
+    </div>
+    `;
+
+    imagesContainer.innerHTML += newImage;
+
+
+    const newThumbnail = `
+    <div class="thumbnail">
+        <img src="${thisPath}">
+    </div>
+    `;
+
+    thumbnailsContainer.innerHTML += newThumbnail;
+
+    const allImages = document.querySelectorAll('.image');
+    allImages[activeItem].classList.add('active');
+    const allThumbnails = document.querySelectorAll('.thumbnail');
+    allThumbnails[activeItem].classList.add('active');
+
+
+
+    const nextArrow = document.querySelector('.arrow.next');
+    nextArrow.addEventListener('click', function() {
+
+    document.querySelector('.image.active').classList.remove('active');
+    document.querySelector('.thumbnail.active').classList.remove('active');
+
+    if(activeItem < allImages.length - 1) {
+        activeItem++;
+    } else {
+        activeItem = 0;
+    }
+
+    allImages[activeItem].classList.add('active');
+    allThumbnails[activeItem].classList.add('active');  
+    });
+
+const previousArrow = document.querySelector('.arrow.previous');
+previousArrow.addEventListener('click', function() {
+
+    document.querySelector('.image.active').classList.remove('active');
+    document.querySelector('.thumbnail.active').classList.remove('active');
+
+    if(activeItem > 0) {
+        activeItem--;
+    } else {
+        activeItem = allImages.length - 1;
+    }
+
+    allImages[activeItem].classList.add('active');
+    allThumbnails[activeItem].classList.add('active');
+    });
+
+
+    });
+
+
+    // MILESTONE 1 E 2
+
+    
